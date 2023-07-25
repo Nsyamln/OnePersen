@@ -1,0 +1,640 @@
+*{
+    font-family:calibri, "segoe ui", arial, tahoma, sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    position: relative;
+    margin-top: 70px;
+    padding: 5px;
+    min-height: 100%;
+    z-index: 1;
+}
+.container p{
+    font-size: 1.2em;
+}
+nav{
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 70px;
+    padding: 0 1.5em;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 3px 3px rgb(235, 235, 235);
+}
+ .logo img{
+    width: 150px;
+    height: 60px;
+    
+}
+nav .nav-menu{
+    position: absolute;
+    right: 1.5em;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+nav .nav-item{
+    display: inline-block;
+
+}
+nav .nav-item a:hover{
+    color: rgb(252, 209, 70);
+}
+nav .nav-item > a{
+    display: inline-block;
+    padding: 0 1.5em;
+    line-height: 70px;
+    color: #000;
+    text-decoration: none;
+
+}
+nav .dropdown{
+    position: relative;
+}
+nav .dropdown a::after{
+    content: '';
+    display: inline-block;
+    margin-left: .5em;
+    vertical-align: middle;
+    border-top: .3em solid white;
+    border-right: .3em solid transparent;
+    border-left: .3em solid transparent;
+}
+nav .dropdown.show a::after{
+    transform: rotate(180deg);
+}
+nav .dropdown-menu{
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    width: 150px;
+    padding: .5em 0;
+    margin-top: -.5em;
+    border: 1px solid rgba(0,0,0,.3);
+    border-radius: .5em;
+    background-color: white;
+}
+nav .dropdown.show .dropdown-menu{
+    display: block;
+}
+nav .dropdown-item{
+    display: block;
+    padding: 0 1.5em;
+    font-size: .875em;
+    color: #000;
+    line-height: 3;
+    text-decoration: none;
+}
+nav .btn-hamburger{
+     display: none;
+    position: absolute;
+    right: 1.5em;
+    top: 50%;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    outline: none;
+    transform: translateY(-50%);
+    }
+nav .btn-hamburger span{
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: rgb(0, 0, 0);
+    margin: 6px;
+    border-radius: 2px;
+    transition: .3s ease-in-out;
+}
+nav .btn-hamburger span:nth-child(4),
+nav .btn-hamburger span:nth-child(5){
+    position: absolute;
+    top: 10px ;
+    opacity: .5;
+}
+nav .btn-hamburger span:nth-child(4){
+    transform: rotate(45deg)scale(0);
+}
+nav .btn-hamburger span:nth-child(5){
+    transform: rotate(-45deg)scale(0);
+}
+nav.opened .btn-hamburger span:nth-child(4){
+    opacity: 1;
+    transform: rotate(45deg)scale(1);
+}
+nav.opened .btn-hamburger span:nth-child(5){
+    opacity: 1;
+    transform: rotate(-45deg)scale(1);
+}
+nav.opened .btn-hamburger span:nth-child(1),
+nav.opened .btn-hamburger span:nth-child(2),
+nav.opened .btn-hamburger span:nth-child(3){
+    opacity: 0;
+}
+#konseling6{
+    display: none;
+}
+@media screen and (max-width : 768px){
+    nav .nav-menu{
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 70px;
+        bottom: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        background-color: #ffffff;
+        transition: bottom .5s ease-in-out;
+        overflow: hidden;
+    }
+    nav.opened .nav-menu{
+        bottom: 0;
+    }
+    nav .nav-item > a{
+        display: block;
+    }
+    nav .dropdown-menu{
+        position: relative;
+        top: 0;
+        margin: 0 1.5em;
+    }
+    nav .btn-hamburger{
+        display: block;
+    }
+    .paket{
+        margin-bottom: 25px;
+    }
+    .testimoni{
+        margin-bottom: 25px;
+    }
+    #home1{
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+    }
+    #home1 img{
+        width: 400px;
+    }
+    #konseling1 .tanda{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+   #konseling1{
+    background-color: #000;
+   }
+    
+    .tanda .box-tanda{
+        background-color: rgb(243, 223, 112);
+        border: 1px solid rgb(236, 207, 43);
+        border-radius: 15px;
+        padding: 5px;
+    }
+
+    #konseling6{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        background: rgb(25,12,41);
+        height: 550px;
+    }
+}    
+
+@media screen and (max-width:400px){
+    #mentoring2{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    #home1 img{
+        width: 250px;
+    }
+    #home1 p{
+        font-size: 18px;
+    } 
+    #home1{
+        height: 150px;
+    }
+    #home3 img{
+       width: 60px;
+    }
+}
+#home2{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.home2{
+    width: 200px;
+    text-align: center;
+}
+.sum{
+    font-size: 28px;
+    font-weight: bold;
+}
+.home1{
+    font-size: 20px;
+}
+#home1{
+    padding:  70px 0;
+    height: 350px;
+    background-color: rgb(252, 209, 70);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.homej{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+#home3{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+footer{
+    font-size: 16px;
+    text-align: center;
+    height:70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(252, 209, 70);
+    color: rgb(32, 26, 26);
+    font-size: 18px;
+    font-weight: bold;
+}
+/* Tampilan-Harga.......................................... */
+.harga1{
+    text-align: center;
+}
+.harga1 .judul{
+    font-size: 24px;
+}
+.harga1{
+    display: flex;
+    width: 100%;
+    height: 120px;
+    background-color: #f8f8f8;
+    justify-content: center;
+}
+.harga2{
+    margin-top: -34px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:  20px 10px;
+    justify-content: center;
+    font-size: 16px;
+}
+.layanan{
+    width: 200px;
+    border-radius: 10px; 
+    background-color: #fff;
+   
+    -moz-box-shadow: 0 0 5px 5px rgb(235, 235, 235);
+    -webkit-box-shadow: 0 0 5px 5px rgb(235, 235, 235);
+    box-shadow: 0 0 5px 5px rgb(235, 235, 235);
+}
+.harga2 .bag1{
+    text-align: center; 
+}
+
+.harga2 div ul{
+    text-align: left; 
+}
+.fitur{
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.fitur img{
+   
+    width: 60px;
+    height: 40px;
+}
+.box-fitur{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.bag1{
+    text-align: center;
+}
+.kuning{
+    color:rgb(252, 209, 70) ;
+}
+.btn-daftar-harga{
+    width: 150px;
+    height: 35px;
+    background-color: rgb(252, 209, 70);
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 18px;
+}
+.bag1 .bold{
+    font-size: 22px;
+}
+.harga3{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 200px;
+    background-color: rgb(209, 78, 78);
+    color: #fff;
+    align-items: center;
+}
+.disclaimer{
+    padding: 60px;
+}
+.harga4{
+    font-size: 16px;
+    margin-left: 30px;
+}
+.button-box{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    border-radius: 30px;
+    background-color: #000;
+}
+/* konseling................................................................. */
+#konseling img{
+    width: 100px;
+    height: 100px;
+}
+
+#konseling1{
+    margin-top: 70px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgb(252, 209, 70);
+    justify-content: space-evenly;
+    align-items: center;
+    height: 400px;
+}
+.desk{
+    width: 400px;
+    height: 200px;
+}
+.tanda-tanda{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.tanda{
+    width: 550px;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 10px;
+}
+.tanda .box-tanda{
+    background-color: rgb(243, 223, 112);
+    border: 1px solid rgb(236, 207, 43);
+    width: 260px;
+    border-radius: 15px;
+    padding: 5px;
+}
+.tiga-tanda{
+    border-radius: 40px;
+    background-color: #fff;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+#konseling2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    font-size: 16px;
+}
+#konseling2 .konseling{
+    background-color:rgb(81, 175, 230) ;
+    width: 300px;
+    height: 400px;
+    border-radius: 15px;
+    font-size: 18px;
+}
+
+#konseling2 .mentoring{
+    background-color:rgb(252, 209, 70) ;
+    width: 300px;
+    height: 400px;
+    border-radius: 15px;
+    font-size: 18px;
+}
+.isi .title-perbedaan{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.paket{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+   
+}
+#konseling3 .paket,#mentoring2 .paket {
+    margin-top: -30px;
+}
+.wrap{
+    margin-left: 150px;
+    margin-right: 150px;
+}
+#konseling3 img,#mentoring2 img{
+    width: 300px;
+    height: 450px;
+    border-radius: 15px;
+    -moz-box-shadow: 0 0 5px 5px rgb(235, 235, 235);
+    -webkit-box-shadow: 0 0 5px 5px rgb(235, 235, 235);
+    box-shadow: 0 0 5px 5px rgb(235, 235, 235);
+}
+#konseling3 p{
+    margin-top: 0;
+    font-weight: bold;
+    font-size: 50px;
+    text-align:  center;
+}
+.jdl{
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0;
+}
+
+#konseling4 .profil-konseling,#mentoring4 .profil-mentoring{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#konseling4 .cek, #mentoring4 .cek{
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+#konseling4 .cek a,#mentoring4 .cek a{
+    text-decoration: none;
+    color: #000;
+}
+#konseling5{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10px;
+}
+#konseling5 .testi{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#mentoring1{
+    margin-top: 70px;
+    background-color: rgb(252, 209, 70);
+    display: flex;
+    flex-flow: row wrap ;
+    justify-content: space-evenly;
+    height: 400px;
+    align-items: center;
+}
+.deskripsi-mentoring{
+    width: 400px;
+    height: fit-content;
+    font-size: 20px;
+}
+#konseling1 .desk{
+    font-size: 20px;
+}
+.masalah{
+    width: 300px;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    font-size: 18px;
+}
+.masalah .mas{
+    font-weight: bold;
+}
+#mentoring img{
+    width: 200px;
+    height: 200px;
+}
+#mentoring2{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10px;
+}
+#mentoring3{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.testimoni{
+    width: 300px;
+    border-radius: 15px;
+    -moz-box-shadow: 0 0 5px 5px rgb(235, 235, 235);
+    -webkit-box-shadow: 0 0 5px 5px rgb(235, 235, 235);
+    box-shadow: 0 0 5px 5px rgb(235, 235, 235);
+}
+.testimoni .nama{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+.pict-testi {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.pict-testi1{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+.pict-testi img, .pict-testi1 img{
+    margin-top: -25px;
+}
+.testimoni p{
+    padding: 10px;
+    text-align: justify;
+}
+
+
+#containerr{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 15px;
+}
+.jdl-blog{
+    margin-top: 80px;
+    text-align: left;
+    font-size: 25px;
+    font-weight: bold;
+}
+#containerr img{
+    padding: 10px;
+    width: 150px;
+    height: 120px;
+    border-radius: 10px;
+}
+
+.content{
+    -moz-box-shadow: 0 0 5px 5px rgb(235, 235, 235);
+    -webkit-box-shadow: 0 0 5px 5px rgb(235, 235, 235);
+    box-shadow: 0 0 5px 5px rgb(235, 235, 235);
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+.content a{
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    margin-top: 20px;
+}
+.source{
+    color:#616060;
+}
+.fitur img{
+  margin-top: 15px;
+}
+hr{
+    margin-top: 40px;
+}
